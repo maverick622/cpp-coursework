@@ -3,6 +3,9 @@ project(cpp_exam)
 
 set(CMAKE_CXX_STANDARD 14)
 
+# 创建可执行文件 - 这行是缺失的！
+add_executable(cpp_exam main.cpp Song.cpp)
+
 # 启用测试
 enable_testing()
 
