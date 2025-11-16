@@ -115,18 +115,36 @@ bool Song::set_rating(int r) {
     return true;
 }
 
-// 标签管理
+// // 标签管理
+// bool Song::add_tag(const string &tag) {
+//     string clean_tag = trim_copy(tag);
+//     if (clean_tag.empty()) {
+//         cout << "[提示] 空标签已忽略\n";
+//         return false;
+//     }
+    
+//     string lower_tag = to_lower_copy(clean_tag);
+//     for (const auto &existing_tag : tags_) {
+//         if (to_lower_copy(existing_tag) == lower_tag) {
+//             cout << "[提示] 标签已存在（忽略大小写）\n";
+//             return false;
+//         }
+//     }
+    
+//     tags_.push_back(clean_tag);
+//     return true;
+// }
 bool Song::add_tag(const string &tag) {
     string clean_tag = trim_copy(tag);
     if (clean_tag.empty()) {
-        cout << "[提示] 空标签已忽略\n";
+        cout << "[提示] 空标签已忽略\n";  // 确保是这个精确文本
         return false;
     }
     
     string lower_tag = to_lower_copy(clean_tag);
     for (const auto &existing_tag : tags_) {
         if (to_lower_copy(existing_tag) == lower_tag) {
-            cout << "[提示] 标签已存在（忽略大小写）\n";
+            cout << "[提示] 标签已存在（忽略大小写）\n";  // 确保是这个精确文本
             return false;
         }
     }
